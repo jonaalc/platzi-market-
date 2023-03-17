@@ -25,6 +25,11 @@ public class Producto {
     private Integer cantidadStock;
 
     private Boolean estado;
+    @ManyToOne  //es el tipo de relación
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)  // las anotaciones hacen referencia a que
+                                                                               // no se van a modificar ni crear nuevas
+                                                                               // categorias desde aquí
+    private Categoria categoria;
 
     public Integer getIdProducto() {
         return idProducto;
